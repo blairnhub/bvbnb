@@ -1,0 +1,44 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Head from "next/head";
+
+export default function AccessDenied() {
+  const router = useRouter();
+
+  return (
+    <>
+      <Head>
+        <title>Access Denied - OTT Community Investments</title>
+        <meta name="description" content="Access denied - Invalid invoice link" />
+      </Head>
+      
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="max-w-md w-full">
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center border border-red-200">
+            {/* Error Icon */}
+            
+            
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Invalid Invoice</h1>
+            <p className="text-gray-600 mb-6">This link is not accessible without a valid invoice.</p>
+            
+            <div className="space-y-3">
+              <button
+                onClick={() => window.location.href = 'https://ott-i.com'}
+                className="w-full bg-gray-600 text-black py-3 px-4 rounded-lg hover:bg-gray-700 transition-colors font-medium"
+              >
+                Return to Home
+              </button>
+              
+              <div className="text-center">
+                <p className="text-gray-500 text-sm">Need help?</p>
+                <p className="text-gray-600 text-sm font-medium">Contact support@ott-i.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
